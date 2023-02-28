@@ -1,5 +1,4 @@
-# PECKK
-## CPSC362-project 1
+# CPSC362-project 1
 
 ## Project Description
 blah blah blah
