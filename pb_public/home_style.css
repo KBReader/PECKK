@@ -13,3 +13,17 @@
     background-size: cover;
     position: relative;
 }
+
+.form-box{
+    width: 100%;
+    position: absolute;
+    background: #fff;
+    padding: 25px 50px 25px;
+    text-align: center;
+}
+
+.form-box h1{
+    font-size: 30px;
+    color: #3c00a0;
+    position: relative;
+}

@@ -49,15 +49,6 @@
   let enterbtn = document.getElementById("enterbtn");
   let enter2btn = document.getElementById("enter2btn")
 
-  loginbtn.onclick = function(){
-    namefield.style.maxHeight = "0";
-    title.innerHTML = "Login";
-    signupbtn.classList.add("disable");
-    loginbtn.classList.remove("disable");
-    enterbtn.classList.remove("disable");
-    enter2btn.classList.add("disable");
-  }
-
   signupbtn.onclick = function(){
     namefield.style.maxHeight = "60px";
     title.innerHTML = "Sign Up";
@@ -65,6 +56,15 @@
     loginbtn.classList.add("disable");
     enterbtn.classList.add("disable");
     enter2btn.classList.remove("disable");
+  }
+
+  loginbtn.onclick = function(){
+    namefield.style.maxHeight = "0";
+    title.innerHTML = "Login";
+    signupbtn.classList.add("disable");
+    loginbtn.classList.remove("disable");
+    enterbtn.classList.remove("disable");
+    enter2btn.classList.add("disable");
   }
 
   function auth(){
