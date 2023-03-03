@@ -1,12 +1,17 @@
 # CPSC362-project 1
 
 ## Project Description
-Run the login_page.html file on your guys' own devices to see if it works.
-To test of you're able to access the home page from the login page:
-1. Choose login option
-2. Enter username "admin123" & password "admin123"
-3. Click Log In button
-4. Should be able to access home page
+If you guys want to test the login/signup page:
+
+Sign up option:
+1. Enter email "admin@csu.fullerton.edu" & username "admin123" & password "admin123"
+2. Click Sign In button
+3. Should be able to access home page
+
+Login option:
+1. Enter username "admin123" & password "admin123"
+2. Click Log In button
+3. Should be able to access home page
 
 ## Group Members
 Kevin Byon: kbyon@csu.fullerton.edu
