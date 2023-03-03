@@ -64,13 +64,13 @@ input{
     padding: 18px;
 }
 
-.btn-field{
+.toggle-btn{
     width: 20%;
     display: flex;
     position: absolute;
     left: 40%;
 }
-.btn-field button{
+.toggle-btn button{
     flex-basis: 100%;
     background: #3c00a0;
     color: #fff;
@@ -82,14 +82,14 @@ input{
     transition: background 0.5s;
 }
 
-.btn-field2{
+.enter-btn{
     width: 100%;
     margin: 60px 0px;
     display: flex;
     position: absolute;
     left: 25%;
 }
-.btn-field2 button:hover{
+.enter-btn button:hover{
     flex-basis: 48%;
     background: #d183ff;
     color: #fff;
@@ -102,7 +102,7 @@ input{
     transition: background 0.5s;
 
 }
-.btn-field2 button{
+.enter-btn button{
     flex-basis: 48%;
     background: #eaeaea;
     color: #555;
@@ -117,14 +117,4 @@ input{
 
 .input-group{
     height: 200px;
-}
-
-.btn-field button.disable{
-    background-color: #eaeaea;
-    color: #555;
-}
-
-.btn-field2 button.disable{
-    background-color: #eaeaea;
-    color: #555;
 }
