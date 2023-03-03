@@ -2,10 +2,12 @@
 
 ## Project Description
 If you guys want to test the login/signup page:
+
 Sign up option:
 1. Enter email "admin@csu.fullerton.edu" & username "admin123" & password "admin123"
 2. Click Sign In button
 3. Should be able to access home page
+
 Login option:
 1. Enter username "admin123" & password "admin123"
 2. Click Log In button
