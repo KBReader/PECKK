@@ -27,3 +27,55 @@
     color: #3c00a0;
     position: relative;
 }
+
+.dropbtn{
+    background-color: #eaeaea;
+    color: black;
+    padding: 8px 8px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+    position: relative;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-links{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.dropdown-links a{
+    color: black;
+    padding: 12px 40px;
+    display: block;
+}
+
+.dropdown-links a:hover{
+    background-color: #3c00a0;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.dropdown:hover .dropdown-links{display: block;}
+
+.dropdown:hover .dropbtn{
+    background-color: #3c00a0;
+    color: #fff;
+}
+
+.course-btn{
+    position: absolute;
+    top: 120px;
+    padding: 8px 8px;
+    font-size: 16px;
+    background-color: #eaeaea;
+    color: black;
+    border-radius: 3px;
+    border: none;
+}
