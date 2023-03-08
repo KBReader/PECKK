@@ -13,6 +13,10 @@ Login option:
 2. Click Log In button
 3. Should be able to access home page
 
+Admin Account:
+email: admin123@gmail.com
+password: 12345678910
+
 ## Group Members
 Kevin Byon: kbyon@csu.fullerton.edu
 
