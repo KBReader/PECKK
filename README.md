@@ -14,8 +14,11 @@ Login option:
 3. Should be able to access home page
 
 Admin Account :
+
 http://127.0.0.1:8090/_/
+
 email: admin123@gmail.com
+
 password: 12345678910
 
 ## Group Members
