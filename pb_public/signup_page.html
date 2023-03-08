@@ -40,26 +40,26 @@
 </div>
 
 <script>
-  let signupbtn = document.getElementById("signupbtn");
-  let loginbtn = document.getElementById("loginbtn");
+    let signupbtn = document.getElementById("signupbtn");
+    let loginbtn = document.getElementById("loginbtn");
 
-  function auth(){
-    var email = document.getElementById("email").value;
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    if(email=="admin@csu.fullerton.edu" && username=="admin123" && password=="admin123"){
-        window.location.assign("home_page.html");
-        alert("Successfully Signed Up ");
+    function auth(){
+        var email = document.getElementById("email").value;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if(email=="admin@csu.fullerton.edu" && username=="admin123" && password=="admin123"){
+            window.location.assign("home_page.html");
+            alert("Successfully Signed Up ");
+        }
+        else{
+            alert("Incomplete Information ");
+            return;
+        }
     }
-    else{
-        alert("Incomplete Information ");
-        return;
-    }
-  }
 
-  function auth2(){
-    window.location.assign("login_page.html");
-  }
+    function auth2(){
+        window.location.assign("login_page.html");
+    }
 
 </script>
 </body>

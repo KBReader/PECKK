@@ -71,11 +71,35 @@
 
 .course-btn{
     position: absolute;
-    top: 120px;
     padding: 8px 8px;
     font-size: 16px;
-    background-color: #eaeaea;
-    color: black;
+    margin: 60px 0px;
+    display: flex;
+    width: 20%;
+}
+
+.course-btn button:hover{
+    flex-basis: 48%;
+    background: #3c00a0;
+    color: #fff;
+    height: 40px;
     border-radius: 3px;
-    border: none;
+    border: 0;
+    outline: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.course-btn button{
+    flex-basis: 48%;
+    background: #eaeaea;
+    color: #555;
+    height: 40px;
+    border-radius: 3px;
+    border: 0;
+    outline: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: background 0.5s;
 }
