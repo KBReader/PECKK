@@ -13,7 +13,7 @@ Login option:
 2. Click Log In button
 3. Should be able to access home page
 
-#Admin Account :
+# Admin Account :
 
 http://127.0.0.1:8090/_/
 
