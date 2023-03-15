@@ -1,29 +1,18 @@
+import useLogout from "hooks/useLogout";
+import useLogin from "hooks/useLogin";
 import pb from "lib/pocketbase.js";
-import {useState} from "react";
 import {useForm} from "react-hook-form";
 
 export default function Auth() {
-    const [isLoading, setLoading] = useState(false);
-    const [dummy, setDummy] = useState(0);
-    const {register, handleSubmit} = useForm();
+    const logout = useLogout();
+    const {mutate: login, isLoading, isError} = useLogin();
+    const {register, handleSubmit, reset} = useForm();
 
     const isLoggedIn = pb.authStore.isValid;
 
-    async function login(data) {
-        setLoading(true);
-        try {
-            const authData = await pb
-                .collection("users")
-                .authWithPassword(data.email, data.password);
-        } catch(e) {
-            alert(e);
-        }
-        setLoading(false);
-    }
-
-    function logout() {
-        pb.authStore.clear();
-        setDummy(Math.random());
+    async function onSubmit(data) {
+        login({email: data.email, password: data.password});
+        reset();
     }
 
     if (isLoggedIn) 
@@ -37,8 +26,10 @@ export default function Auth() {
     return (
         <>
             {isLoading && <p>Loading...</p>}
+            {isError && <p style={{color: "red"}}>Invalid email or password</p>}
+
             <h1>Please Log In</h1>
-            <form onSubmit={handleSubmit(login)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <input type="text" placeholder="email" {...register("email")}/>
                 <input type="password" placeholder="password" {...register("password")}/>
 
