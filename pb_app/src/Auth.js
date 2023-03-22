@@ -11,14 +11,14 @@ export default function Auth() {
     const isLoggedIn = pb.authStore.isValid;
 
     async function onSubmit(data) {
-        login({email: data.email, password: data.password});
+        login({username: data.username, password: data.password});
         reset();
     }
 
     if (isLoggedIn) 
         return (
             <>
-                <h1>Logged In: {pb.authStore.model.email}</h1>
+                <h1>Logged In: {pb.authStore.model.username}</h1>
                 <button onClick={logout}>Log Out</button>
             </>
         );
@@ -26,11 +26,11 @@ export default function Auth() {
     return (
         <>
             {isLoading && <p>Loading...</p>}
-            {isError && <p style={{color: "red"}}>Invalid email or password</p>}
+            {isError && <p style={{color: "red"}}>Invalid email/username or password</p>}
 
-            <h1>Please Log In</h1>
+            <h1>Please Log In Using Email/Username</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" placeholder="email" {...register("email")}/>
+                <input type="text" placeholder="username" {...register("username")}/>
                 <input type="password" placeholder="password" {...register("password")}/>
 
                 <button type="submit" disabled={isLoading}>{isLoading ? "Loading" : "Login"}</button>
