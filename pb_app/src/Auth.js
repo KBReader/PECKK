@@ -10,6 +10,24 @@ export default function Auth() {
 
     const isLoggedIn = pb.authStore.isValid;
 
+    const inputstyle = {
+        width: '100%',
+        background: 'transparent',
+        border: '0',
+        outline: '0',
+        padding: '18px'
+    };
+
+    const loginstyle = {
+        background: '#eaeaea',
+        color: '#555',
+        height: '40px',
+        border: '0',
+        outline: '0',
+        cursor: 'pointer',
+        transition: 'background 0.5s'
+    };
+
     async function onSubmit(data) {
         login({username: data.username, password: data.password});
         reset();
@@ -30,10 +48,10 @@ export default function Auth() {
 
             <h1>Please Log In Using Email/Username</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" placeholder="username" {...register("username")}/>
-                <input type="password" placeholder="password" {...register("password")}/>
+                <input type="text" id="emailuser" placeholder="Email/Username" style={inputstyle} {...register("username")}/>
+                <input type="password" id="password" placeholder="Password" style={inputstyle} {...register("password")}/>
 
-                <button type="submit" disabled={isLoading}>{isLoading ? "Loading" : "Login"}</button>
+                <button type="submit" id="loginbtn" style={loginstyle} disabled={isLoading}>{isLoading ? "Loading" : "Login"}</button>
             </form>
         </>
     );
