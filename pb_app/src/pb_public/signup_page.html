@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forum Sign Up Page</title>
+    <link rel="stylesheet" href="signup_style.css">
+</head>
+<body>
+<div class="container">
+    <div class="form-box">
+        <h1>Sign Up</h1>
+        <form>
+            <div class="input-group">
+                <div class="input-field">
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+
+                <div class="input-field">
+                    <input type="text" id="username" placeholder="Username">
+                </div>
+
+                <div class="input-field">
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+
+            </div>
+
+            <div class="toggle-btn">
+                <button type="button" id="loginbtn" onclick="auth2()">Login >>></button>
+            </div>
+
+            <div class="enter-btn">
+                <button type="button" id="signupbtn" onclick="auth()">Sign Up</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    let signupbtn = document.getElementById("signupbtn");
+    let loginbtn = document.getElementById("loginbtn");
+
+    function auth(){
+        var email = document.getElementById("email").value;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if(email=="admin@csu.fullerton.edu" && username=="admin123" && password=="admin123"){
+            window.location.assign("home_page.html");
+            alert("Successfully Signed Up ");
+        }
+        else{
+            alert("Incomplete Information ");
+            return;
+        }
+    }
+
+    function auth2(){
+        window.location.assign("login_page.html");
+    }
+
+</script>
+</body>
+</html>
