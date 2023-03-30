@@ -72,6 +72,17 @@ input{
 }
 .toggle-btn button{
     flex-basis: 100%;
+    background: #eaeaea;
+    color: #555;
+    height: 25px;
+    border-radius: 3px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+.toggle-btn button:hover{
+    flex-basis: 100%;
     background: #3c00a0;
     color: #fff;
     height: 25px;
