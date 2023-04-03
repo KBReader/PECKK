@@ -3,6 +3,7 @@ import useLogin from "hooks/useLogin";
 import pb from "lib/pocketbase.js";
 import {useForm} from "react-hook-form";
 import "./pb_public/login_style.css";
+import Signup from "Signup";
 
 export default function Auth() {
     const logout = useLogout();
@@ -25,7 +26,7 @@ export default function Auth() {
                     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                     <title>Discussion Forum Login Page</title>
-                    <link rel="stylesheet" href="login_page.css"></link>
+                    <link rel="stylesheet" href="login_style.css"></link>
                 </head>
                 <body>
                 <div class="container">
@@ -54,7 +55,7 @@ export default function Auth() {
                 <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <title>Discussion Forum Login Page</title>
-                <link rel="stylesheet" href="login_page.css"></link>
+                <link rel="stylesheet" href="login_style.css"></link>
             </head>
             <body>
             <div class="container">
@@ -78,7 +79,7 @@ export default function Auth() {
                         </div>
 
                         <div class="toggle-btn">
-                            <button type="button" id="signupbtn">Sign Up</button>
+                            <button type="button" id="signupbtn" onClick={Signup}>Sign Up</button>
                         </div>
                     </form>
                 </div>
