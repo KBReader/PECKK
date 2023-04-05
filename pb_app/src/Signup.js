@@ -2,6 +2,7 @@ import useSignup from "hooks/useSignup";
 import pb from "lib/pocketbase.js";
 import {useForm} from "react-hook-form";
 import "./pb_public/signup_style.css";
+import Auth from "Auth";
 
 export default function Signup() {
     const {mutate: signup, isLoading} = useSignup();
@@ -75,7 +76,7 @@ export default function Signup() {
                         </div>
 
                         <div class="toggle-btn">
-                            <button type="button" id="loginbtn">Login</button>
+                            <button type="button" id="loginbtn" onClick={Auth}>Login</button>
                         </div>
                     </form>
                 </div>
