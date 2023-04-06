@@ -5,7 +5,7 @@ import "./pb_public/signup_style.css";
 import Auth from "Auth";
 
 export default function Signup() {
-    const {mutate: signup, isLoading} = useSignup();
+    const {mutate: signup, isLoading, isError} = useSignup();
     const {register, handleSubmit, reset} = useForm();
 
     const isSignedUp = pb.authStore.isValid;
@@ -23,7 +23,7 @@ export default function Signup() {
                     <meta charset="UTF-8"></meta>
                     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-                    <title>Discussion Forum Login Page</title>
+                    <title>Discussion Forum Sign Up Page</title>
                     <link rel="stylesheet" href="signup_style.css"></link>
                 </head>
                 <body>
@@ -56,6 +56,7 @@ export default function Signup() {
                 <div class="form-box">
                     <h1>Sign Up</h1>
                     {isLoading && <p>Loading...</p>}
+                    {isError && <p style={{color: "red"}}>Missing Information</p>}
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div class="input-group">
                             <div class="input-field">
