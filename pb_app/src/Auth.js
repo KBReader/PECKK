@@ -75,7 +75,7 @@ export default function Auth() {
                         </div>
 
                         <div class="enter-btn">
-                            <button type="submit" id="loginbtn" disabled={isLoading}>{isLoading ? "Loading" : "Login"}</button>
+                            <button type="submit" id="loginbtn" disabled={isLoading}>{isLoading ? "Loading..." : "Login"}</button>
                         </div>
 
                         <div class="toggle-btn">
