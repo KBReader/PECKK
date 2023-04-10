@@ -1,17 +1,32 @@
 # CPSC362-project 1
 
 ## Project Description
-If you guys want to test the login/signup page:
+Discussion Forum Web Application
 
-Sign up option:
-1. Enter email "admin@csu.fullerton.edu" & username "admin123" & password "admin123"
-2. Click Sign In button
-3. Should be able to access home page
+## Work with PocketBase + React on local machine (Windows):
 
-Login option:
-1. Enter username "admin123" & password "admin123"
-2. Click Log In button
-3. Should be able to access home page
+PocketBase:
+
+1. Fork this repository
+2. PocketBase Download: https://pocketbase.io/docs
+3. Open PECKK file in terminal and type "./pocketbase serve"
+4. Open admin UI link (see admin account below)
+
+VS Code:
+
+1. Add PECKK folder into workspace
+2. Open terminal in VS Code
+3. Navigate to pb_app with "cd pb_app" in terminal
+4. Type "npm add pocketbase" in terminal
+
+React App:
+
+1. Navigate to "cd pb_app"
+2. Type "npx create-react-app" in terminal to install/create react app
+3. Type "npm add react-hook-form" in terminal to install react hooks library
+4. Type "npm start" in pb_app directory to start server
+
+See YouTube link for additional setup help: https://www.youtube.com/playlist?list=PLqFvlDFoiZ-0ixIS8D4JTHRuVy_rkfROY
 
 # Admin Account :
 
