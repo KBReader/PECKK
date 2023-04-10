@@ -24,7 +24,8 @@ React App:
 1. Navigate to "cd pb_app"
 2. Type "npx create-react-app" in terminal to install/create react app
 3. Type "npm add react-hook-form" in terminal to install react hooks library
-4. Type "npm start" in pb_app directory to start server
+4. Type "npm add react-query" in terminal to install react query library
+5. Type "npm start" in pb_app directory to start server
 
 See YouTube link for additional setup help: https://www.youtube.com/playlist?list=PLqFvlDFoiZ-0ixIS8D4JTHRuVy_rkfROY
 
