@@ -88,10 +88,4 @@ export default function Auth() {
             </html>
         </>
     );
-
-    return (
-        <>
-            <Signup/>
-        </>
-    );
 }
