@@ -34,7 +34,7 @@ export default function Auth() {
                         <h1>Logged in as: {pb.authStore.model.username}</h1>
 
                         <div class="enter-btn">
-                            <button onClick={logout}>Log Out</button>
+                            <button type="button" onClick={logout}>Log Out</button>
                         </div>
 
                         <div class="toggle-btn">
@@ -86,6 +86,12 @@ export default function Auth() {
             </div>
             </body>
             </html>
+        </>
+    );
+
+    return (
+        <>
+            <Signup/>
         </>
     );
 }

@@ -11,7 +11,7 @@ export default function Signup() {
     const isSignedUp = pb.authStore.isValid;
 
     async function onSubmit(data) {
-        signup({email: data.email, username: data.username, password: data.password});
+        signup({email: data.email, username: data.username, password: data.password, passwordConfirm: data.passwordConfirm});
         reset();
     }
 
@@ -70,10 +70,14 @@ export default function Signup() {
                             <div class="input-field">
                                 <input type="password" id="password" placeholder="Password" {...register("password")}/>
                             </div>
+
+                            <div class="input-field">
+                                <input type="password" id="passwordConfirm" placeholder="Confirm Password" {...register("passwordConfirm")}/>
+                            </div>
                         </div>
 
                         <div class="enter-btn">
-                            <button type="button" id="signupbtn" disabled={isLoading}>{isLoading ? "Loading" : "Signup"}</button>
+                            <button type="submit" id="signupbtn" disabled={isLoading}>{isLoading ? "Loading" : "Signup"}</button>
                         </div>
 
                         <div class="toggle-btn">
