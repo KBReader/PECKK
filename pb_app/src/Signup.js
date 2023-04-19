@@ -12,32 +12,18 @@ export default function Signup() {
 
     async function onSubmit(data) {
         signup({email: data.email, username: data.username, password: data.password, passwordConfirm: data.passwordConfirm});
+        alert("Successfully Signed Up");
         reset();
+    }
+
+    async function redirect() {
+        alert("This is suppose to redirect to Auth.js");
     }
 
     if (isSignedUp)
         return (
             <>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8"></meta>
-                    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-                    <title>Discussion Forum Sign Up Page</title>
-                    <link rel="stylesheet" href="signup_style.css"></link>
-                </head>
-                <body>
-                <div class="container">
-                    <div class="form-box">
-                        <h1>Successfully signed up as: {pb.authStore.model.username}</h1>
-
-                        <div class="toggle-btn">
-                            <button type="button" id="loginbtn">Login</button>
-                        </div>
-                    </div>
-                </div>
-                </body>
-                </html>
+                <Auth/>
             </>
         );
 
@@ -52,36 +38,36 @@ export default function Signup() {
                 <link rel="stylesheet" href="signup_style.css"></link>
             </head>
             <body>
-            <div class="container">
-                <div class="form-box">
+            <div class="sign-container">
+                <div class="sign-form-box">
                     <h1>Sign Up</h1>
                     {isLoading && <p>Loading...</p>}
                     {isError && <p style={{color: "red"}}>Missing Information</p>}
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div class="input-group">
-                            <div class="input-field">
+                        <div class="sign-input-group">
+                            <div class="sign-input-field">
                                 <input type="email" id="email" placeholder="Email" {...register("email")}/>
                             </div>
 
-                            <div class="input-field">
+                            <div class="sign-input-field">
                                 <input type="text" id="username" placeholder="Username" {...register("username")}/>
                             </div>
 
-                            <div class="input-field">
+                            <div class="sign-input-field">
                                 <input type="password" id="password" placeholder="Password" {...register("password")}/>
                             </div>
 
-                            <div class="input-field">
+                            <div class="sign-input-field">
                                 <input type="password" id="passwordConfirm" placeholder="Confirm Password" {...register("passwordConfirm")}/>
                             </div>
                         </div>
 
-                        <div class="enter-btn">
+                        <div class="sign-enter-btn">
                             <button type="submit" id="signupbtn" disabled={isLoading}>{isLoading ? "Loading" : "Signup"}</button>
                         </div>
 
-                        <div class="toggle-btn">
-                            <button type="button" id="loginbtn" onClick={Auth}>Login</button>
+                        <div class="sign-toggle-btn">
+                            <button type="button" id="loginbtn" onClick={redirect}>Login</button>
                         </div>
                     </form>
                 </div>

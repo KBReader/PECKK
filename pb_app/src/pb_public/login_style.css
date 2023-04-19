@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-.container{
+.log-container{
     width: 100%;
     height: 100vh;
     background-image: url(background.jpg);
@@ -14,7 +14,7 @@
     position: relative;
 }
 
-.form-box{
+.log-form-box{
     width: 90%;
     max-width: 450px;
     border-radius: 10px;
@@ -27,14 +27,14 @@
     text-align: center;
 }
 
-.form-box h1{
+.log-form-box h1{
     font-size: 30px;
     margin-bottom: 60px;
     color: #3c00a0;
     position: relative;
 }
 
-.form-box h1::after{
+.log-form-box h1::after{
     content: '';
     width: 110px;
     height: 4px;
@@ -46,7 +46,7 @@
     transform: translate(-50%);
 }
 
-.input-field{
+.log-input-field{
     background: #eaeaea;
     margin: 15px 0;
     border-radius: 3px;
@@ -64,13 +64,13 @@ input{
     padding: 18px;
 }
 
-.toggle-btn{
+.log-toggle-btn{
     width: 20%;
     display: flex;
     position: absolute;
     left: 40%;
 }
-.toggle-btn button{
+.log-toggle-btn button{
     flex-basis: 100%;
     background: #eaeaea;
     color: #555;
@@ -81,7 +81,7 @@ input{
     cursor: pointer;
     transition: background 0.5s;
 }
-.toggle-btn button:hover{
+.log-toggle-btn button:hover{
     flex-basis: 100%;
     background: #3c00a0;
     color: #fff;
@@ -93,14 +93,14 @@ input{
     transition: background 0.5s;
 }
 
-.enter-btn{
+.log-enter-btn{
     width: 100%;
     margin: 60px 0px;
     display: flex;
     position: absolute;
     left: 25%;
 }
-.enter-btn button:hover{
+.log-enter-btn button:hover{
     flex-basis: 48%;
     background: #d183ff;
     color: #fff;
@@ -113,7 +113,7 @@ input{
     transition: background 0.5s;
 
 }
-.enter-btn button{
+.log-enter-btn button{
     flex-basis: 48%;
     background: #eaeaea;
     color: #555;
@@ -126,6 +126,6 @@ input{
     transition: background 0.5s;
 }
 
-.input-group{
+.log-input-group{
     height: 200px;
 }
