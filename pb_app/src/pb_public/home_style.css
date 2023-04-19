@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-.container{
+.home-container{
     width: 100%;
     height: 100vh;
     background-image: url(background.jpg);
@@ -14,7 +14,7 @@
     position: relative;
 }
 
-.form-box{
+.home-form-box{
     width: 100%;
     position: absolute;
     background: #fff;
@@ -22,7 +22,7 @@
     text-align: center;
 }
 
-.form-box h1{
+.home-form-box h1{
     font-size: 30px;
     color: #3c00a0;
     position: relative;
@@ -104,7 +104,7 @@
     transition: background 0.5s;
 }
 
-.input-field input[type=text]{
+.home-input-field input[type=text]{
     background-color: #eaeaea;
     float: right;
     padding: 6px;
