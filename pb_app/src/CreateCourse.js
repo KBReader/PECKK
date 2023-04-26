@@ -1,7 +1,8 @@
 import pb from "lib/pocketbase.js";
 import {useForm} from "react-hook-form";
+import NavigationBar from "NavigationBar";
 
-import "./pb_public/login_style.css";
+// import "./pb_public/login_style.css";
 // import "./pb_public/create_course_style.css";  TODO: create this css file
 
 export default function CreateCourse() {
@@ -31,14 +32,19 @@ export default function CreateCourse() {
                 };
 
                 await pb.collection('courses').create(data);
-                document.open();
-                document.write('New course created.');
-                console.log('New course created.');
+                
+                // direct to new course page using new course's key
+                const course = await pb.collection('courses').getFullList({
+                    filter: `subject = "${course_subject.toLowerCase()}" && number = "${course_number.toLowerCase()}"`
+                });
+
+                localStorage.setItem('course_key', course[0].id);
+                localStorage.setItem('current_page', 'ViewCourse');
+                window.location.reload();
             }
             else {  // non-empty query -> course already exists
-                document.open();
-                document.write('This course already exists.');
                 console.log('This course already exists.');
+                reset();
             }
         }
         catch (error) {
@@ -49,42 +55,45 @@ export default function CreateCourse() {
     }
 
     return (
-        <html lang = "en">
-            <head>
-            </head>
-            <body>
-                <div className = "container">
-                    <div className = "form-box">
-                        <h1>Create New Course</h1>
-                        <form onSubmit = {handleSubmit(create_button)}>
-                            <div className = "input-group">
-                                <div className = "input-field">
-                                    <input type = "text" id = "course_subject"
-                                           placeholder = "Course Subject"
-                                           {...register("course_subject")}/>
+        <>
+            <NavigationBar/>
+            <html lang = "en">
+                <head>
+                </head>
+                <body>
+                    <div className = "container">
+                        <div className = "form-box">
+                            <h1>Create New Course</h1>
+                            <form onSubmit = {handleSubmit(create_button)}>
+                                <div className = "input-group">
+                                    <div className = "input-field">
+                                        <input type = "text" id = "course_subject"
+                                            placeholder = "Course Subject"
+                                            {...register("course_subject")}/>
+                                    </div>
+
+                                    <div className = "input-field">
+                                        <input type = "text" id = "course_number"
+                                            placeholder = "Course Number"
+                                            {...register("course_number")}/>
+                                    </div>
+
+                                    <div className = "input-field">
+                                        <input type = "text" id = "course_name"
+                                            placeholder = "Course Name"
+                                            {...register("course_name")}/>
+                                    </div>
                                 </div>
 
-                                <div className = "input-field">
-                                    <input type = "text" id = "course_number"
-                                           placeholder = "Course Number"
-                                           {...register("course_number")}/>
+                                <div className = "enter-btn">
+                                    <button type = "submit"
+                                            id = "create_button">CREATE</button>
                                 </div>
-
-                                <div className = "input-field">
-                                    <input type = "text" id = "course_name"
-                                           placeholder = "Course Name"
-                                           {...register("course_name")}/>
-                                </div>
-                            </div>
-
-                            <div className = "enter-btn">
-                                <button type = "submit"
-                                        id = "create_button">CREATE</button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </body>
-        </html>
+                </body>
+            </html>
+        </>
     );
 }

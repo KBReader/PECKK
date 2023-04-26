@@ -1,10 +1,11 @@
 import pb from "lib/pocketbase.js";
 import {useForm} from "react-hook-form";
+import NavigationBar from "NavigationBar";
 
 // import "./pb_public/login_style.css";
 // import "./pb_publc/view_discussion_style.css";  TODO: create this css file
 
-var discussion_key = "9xousuqytqoj6kz";
+var discussion_key = localStorage.getItem('discussion_key');
 
 export default function ViewDiscussion() {
     const {register, handleSubmit, reset} = useForm();
@@ -26,8 +27,8 @@ export default function ViewDiscussion() {
             console.log('Error creating answer: ', error);
         }
 
-        document.open();
         reset();
+        window.location.reload();
     }
 
     async function generate_containers() {
@@ -51,7 +52,7 @@ export default function ViewDiscussion() {
             parent_container_title.innerText = discussion_title;
             parent_container.appendChild(parent_container_title);
 
-            // question box
+            // question container
             var question_div = document.createElement('div');
             question_div.setAttribute("className", "question_container")
             
@@ -64,7 +65,7 @@ export default function ViewDiscussion() {
             question_div.appendChild(question_desc);
             parent_container.appendChild(question_div);
 
-            // answer boxes
+            // answer containers
             for (var i = 1; i < posts.length; i++) {
                 var answer_i = document.createElement('div');
                 answer_i.setAttribute("className", "answer_container");
@@ -86,31 +87,34 @@ export default function ViewDiscussion() {
     }
 
     return (
-        <html lang = "en">
-            <head>
-            </head>
-            <body>
-                <div className = "parent_container" id = "parent_container"
-                     onLoad = {generate_containers()}>
-                </div>
-                <form onSubmit = {handleSubmit(create_answer_button)}>
-                    <div className = "input-group">
-                        <div className = "input-field">
-                            <textarea
-                             type = "text"
-                             id = "answer_description"
-                             placeholder = "Type your answer here..."
-                             {...register("answer_description")}/>
+        <>
+            <NavigationBar/>
+            <html lang = "en">
+                <head>
+                </head>
+                <body>
+                    <div className = "parent_container" id = "parent_container"
+                        onLoad = {generate_containers()}>
+                    </div>
+                    <form onSubmit = {handleSubmit(create_answer_button)}>
+                        <div className = "input-group">
+                            <div className = "input-field">
+                                <textarea
+                                type = "text"
+                                id = "answer_description"
+                                placeholder = "Type your answer here..."
+                                {...register("answer_description")}/>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className = "enter-btn">
-                        <button type = "submit"
-                            id = "create_button">SUBMIT ANSWER</button>
-                    </div>
-                </form>
-            </body>
-        </html>
+                        <div className = "enter-btn">
+                            <button type = "submit"
+                                id = "create_button">SUBMIT ANSWER</button>
+                        </div>
+                    </form>
+                </body>
+            </html>
+        </>
     );
 }
 
