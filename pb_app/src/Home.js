@@ -2,6 +2,7 @@ import useLogout from "hooks/useLogout";
 import pb from "lib/pocketbase";
 import {useForm} from "react-hook-form";
 import "./pb_public/home_style.css";
+import NavigationBar from "NavigationBar";
 
 export default function Home() {
     const logout = useLogout();
@@ -12,6 +13,7 @@ export default function Home() {
     if (isLoggedIn)
         return (
             <>
+                <NavigationBar/>
                 <html lang="en">
                 <head>
                     <meta charset="UTF-8"></meta>
@@ -30,9 +32,6 @@ export default function Home() {
                             <button class="dropbtn">Navigation</button>
 
                             <div class="dropdown-links">
-                                <a href="Home.js">Home</a>
-                                <a href="courses_page.html">Courses</a>
-                                <a href="profile_page.html">Profile</a>
                                 <a href="Auth.js" onClick={logout}>Logout</a>
                             </div>
                         </div>
