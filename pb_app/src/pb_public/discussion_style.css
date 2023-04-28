@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url(background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.form-box{
+    width: 100%;
+    position: absolute;
+    background: #fff;
+    padding: 25px 50px 25px;
+    text-align: center;
+}
+
+.form-box h1{
+    font-size: 30px;
+    color: #3c00a0;
+    position: relative;
+}
+
+.dropbtn{
+    background-color: #eaeaea;
+    color: #555;
+    padding: 8px 8px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+    position: relative;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-links{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.dropdown-links a{
+    color: #555;
+    padding: 12px 40px;
+    display: block;
+}
+
+.dropdown-links a:hover{
+    background-color: #3c00a0;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.dropdown:hover .dropdown-links{display: block;}
+
+.dropdown:hover .dropbtn{
+    background-color: #3c00a0;
+    color: #fff;
+}
+
+
+.input-field input[type=text]{
+    background-color: #eaeaea;
+    float: right;
+    padding: 6px;
+    border-radius: 3px;
+    border: none;
+    margin-top: 0px;
+    margin-right: -40px;
+    font-size: 16px;
+}
+
+.search-btn{
+    float: right;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+}
+
+.search-btn button:hover{
+    background: #3c00a0;
+    color: #fff;
+    height: 30px;
+    border-radius: 3px;
+    border: 0;
+    outline: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.search-btn button{
+    background: #eaeaea;
+    color: #555;
+    height: 30px;
+    border-radius: 3px;
+    border: 0;
+    outline: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.discussion-head{
+    display: flex;
+    background-color: #ffff;
+    margin-top: 150px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.discussion-authors{
+    flex: 20%;
+}
+
+.discussion-content{
+    flex: 80%;
+}
+
+.discussion-body{
+    display: flex;
+    background-color: #ffff;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.discussion-body .discussion-authors .username{
+    font-size: 20px;
+}
+
+.discussion-body .discussion-authors img{
+    max-width: 50px;
+    max-height: 80px;
+}
+
+.discussion-body .discussion-content .comment button{
+    border:none;
+    padding:10px;
+    font-weight: bolder;
+
+    cursor: pointer;
+    float: right;
+}
+
+.comment-area{
+    margin-bottom:50px;
+}
+
+.comment-area textarea{
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-block: 10px;
+    
+}
+
+.comment-area input{
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.comment-area input:hover{
+    border: solid 1px #000000;
+}
