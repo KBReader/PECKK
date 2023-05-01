@@ -47,12 +47,12 @@ export default function SearchCourse() {
     
     return (
         <>
-            <NavigationBar/>
             <html lang = "en">
                 <head>
                 </head>
                 <body>
                     <div className = "sc-container">
+                        <NavigationBar/>
                         <div className = "sc-form-box">
                             <h1>Search for a Course</h1>
                             <form onSubmit = {handleSubmit(search_button)}>
@@ -71,9 +71,6 @@ export default function SearchCourse() {
 
                                     <div className = "sc-enter-btn">
                                         <button type = "submit" id = "search_button">SEARCH</button>
-                                    </div>
-                                
-                                    <div className = "sc-enter-btn">
                                         <button id = "create_course_button" onClick = {create_course_button.bind(this)}>CREATE COURSE</button>
                                     </div>
                                 </div>

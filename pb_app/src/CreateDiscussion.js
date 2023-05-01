@@ -2,8 +2,7 @@ import pb from "lib/pocketbase.js";
 import {useForm} from "react-hook-form";
 import NavigationBar from "NavigationBar";
 
-// import "./pb_public/login_style.css";
-// import "./pb_public/create_discussion_style.css";  TODO: create this css file
+import "./pb_public/cd_style.css";
 
 var course_key = localStorage.getItem('course_key');
 
@@ -56,12 +55,12 @@ export default function CreateDiscussion() {
 
     return (  // TODO: replace textarea (question box) with new class name
         <>
-            <NavigationBar/>
             <html lang = "en">
                 <head>
                 </head>
                 <body>
                     <div className = "cd-container">
+                        <NavigationBar/>
                         <div className = "cd-form-box">
                             <h1>Create Discussion</h1>
                             <form onSubmit = {handleSubmit(create_button)}>

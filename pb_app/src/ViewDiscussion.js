@@ -2,8 +2,7 @@ import pb from "lib/pocketbase.js";
 import {useForm} from "react-hook-form";
 import NavigationBar from "NavigationBar";
 
-// import "./pb_public/login_style.css";
-// import "./pb_publc/view_discussion_style.css";  TODO: create this css file
+import "./pb_public/vd_style.css";
 
 var discussion_key = localStorage.getItem('discussion_key');
 
@@ -88,30 +87,34 @@ export default function ViewDiscussion() {
 
     return (
         <>
-            <NavigationBar/>
             <html lang = "en">
                 <head>
                 </head>
                 <body>
-                    <div className = "parent_container" id = "parent_container"
-                        onLoad = {generate_containers()}>
-                    </div>
-                    <form onSubmit = {handleSubmit(create_answer_button)}>
-                        <div className = "vd-input-group">
-                            <div className = "vd-input-field">
-                                <textarea
-                                type = "text"
-                                id = "answer_description"
-                                placeholder = "Type your answer here..."
-                                {...register("answer_description")}/>
+                    <div className = "vd-container">
+                        <NavigationBar/>
+                        <div className = "vd-form-box">
+                            <h1>View Discussions</h1>
+                            <div className = "parent_container" id = "parent_container" 
+                                onLoad = {generate_containers()}>
                             </div>
-                        </div>
+                            <form onSubmit = {handleSubmit(create_answer_button)}>
+                                <div className = "vd-input-group">
+                                    <div className = "vd-input-field">
+                                        <textarea
+                                        type = "text"
+                                        id = "answer_description"
+                                        placeholder = "Type your answer here..."
+                                        {...register("answer_description")}/>
+                                    </div>
+                                </div>
 
-                        <div className = "vd-enter-btn">
-                            <button type = "submit"
-                                id = "create_button">SUBMIT ANSWER</button>
+                                <div className = "vd-enter-btn">
+                                    <button type = "submit" id = "create_button">SUBMIT ANSWER</button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </body>
             </html>
         </>

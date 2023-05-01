@@ -6,14 +6,12 @@ import NavigationBar from "NavigationBar";
 
 export default function Home() {
     const logout = useLogout();
-    const {register, handleSubmit, reset} = useForm();
 
     const isLoggedIn = pb.authStore.isValid;
 
     if (isLoggedIn)
         return (
             <>
-                <NavigationBar/>
                 <html lang="en">
                 <head>
                     <meta charset="UTF-8"></meta>
@@ -24,12 +22,11 @@ export default function Home() {
                 </head>
                 <body>
                 <div class="home-container">
+                    <NavigationBar/>
                     <div class="home-form-box">
                         <h1 id="title">Discussion Forum Home Page</h1>
-                        <h1>Logged In As: {pb.authStore.model.username}</h1>
-
                         <div class="dropdown">
-                            <button class="dropbtn">Navigation</button>
+                            <button class="dropbtn">Dropdown</button>
 
                             <div class="dropdown-links">
                                 <a href="Auth.js" onClick={logout}>Logout</a>

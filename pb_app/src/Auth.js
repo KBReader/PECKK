@@ -3,11 +3,10 @@ import useLogin from "hooks/useLogin";
 import pb from "lib/pocketbase.js";
 import {useForm} from "react-hook-form";
 import "./pb_public/login_style.css";
-import Signup from "Signup";
 import Home from "Home";
+import LoginNav from "LoginNav";
 
 export default function Auth() {
-    const logout = useLogout();
     const {mutate: login, isLoading, isError} = useLogin();
     const {register, handleSubmit, reset} = useForm();
 
@@ -18,23 +17,12 @@ export default function Auth() {
         reset();
     }
 
-    async function redirect() {
-        alert("This is suppose to redirect to Signup.js");
-    }
-
     if (isLoggedIn) 
         return (
             <>
                 <Home/>
             </>
         );
-
-    /*if (onclick = true)
-        return (
-            <>
-                <Signup/>
-            </>
-        );*/
 
     return (
         <>
@@ -48,6 +36,7 @@ export default function Auth() {
             </head>
             <body>
             <div class="log-container">
+                <LoginNav/>
                 <div class="log-form-box">
                     <h1>Log In with Email/Username</h1>
                     {isLoading && <p>Loading...</p>}
@@ -65,10 +54,6 @@ export default function Auth() {
 
                         <div class="log-enter-btn">
                             <button type="submit" id="loginbtn" disabled={isLoading}>{isLoading ? "Loading..." : "Login"}</button>
-                        </div>
-
-                        <div class="log-toggle-btn">
-                            <button type="button" id="signupbtn" onClick={redirect}>Sign Up</button>
                         </div>
                     </form>
                 </div>

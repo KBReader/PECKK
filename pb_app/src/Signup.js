@@ -2,30 +2,16 @@ import useSignup from "hooks/useSignup";
 import pb from "lib/pocketbase.js";
 import {useForm} from "react-hook-form";
 import "./pb_public/signup_style.css";
-import Auth from "Auth";
+import LoginNav from "LoginNav";
 
 export default function Signup() {
     const {mutate: signup, isLoading, isError} = useSignup();
     const {register, handleSubmit, reset} = useForm();
 
-    const isSignedUp = pb.authStore.isValid;
-
     async function onSubmit(data) {
         signup({email: data.email, username: data.username, password: data.password, passwordConfirm: data.passwordConfirm});
-        alert("Successfully Signed Up");
         reset();
     }
-
-    async function redirect() {
-        alert("This is suppose to redirect to Auth.js");
-    }
-
-    if (isSignedUp)
-        return (
-            <>
-                <Auth/>
-            </>
-        );
 
     return (
         <>
@@ -39,6 +25,7 @@ export default function Signup() {
             </head>
             <body>
             <div class="sign-container">
+                <LoginNav/>
                 <div class="sign-form-box">
                     <h1>Sign Up</h1>
                     {isLoading && <p>Loading...</p>}
@@ -64,10 +51,6 @@ export default function Signup() {
 
                         <div class="sign-enter-btn">
                             <button type="submit" id="signupbtn" disabled={isLoading}>{isLoading ? "Loading" : "Signup"}</button>
-                        </div>
-
-                        <div class="sign-toggle-btn">
-                            <button type="button" id="loginbtn" onClick={redirect}>Login</button>
                         </div>
                     </form>
                 </div>

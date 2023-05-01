@@ -1,8 +1,7 @@
 import pb from "lib/pocketbase.js";
 import NavigationBar from "NavigationBar";
 
-// import "./pb_public/login_style.css";
-// import "./pb_publc/view_discussion_style.css";  TODO: create this css file
+import "./pb_public/vc_style.css";
 
 var course_key = localStorage.getItem('course_key');
 
@@ -63,15 +62,19 @@ export default function ViewCourse() {
 
     return (
         <>
-            <NavigationBar/>
             <html lang = "en">
                 <head>
                 </head>
                 <body onLoad = {generate_containers()}>
-                    <div className = "parent_container" id = "parent_container">
-                    </div>
                     <div className = "vc-container">
-                        <button id = "create_discussion_button" onClick = {create_discussion_button.bind(this)}>CREATE DISCUSSION</button>
+                        <NavigationBar/>
+                        <div className = "vc-form-box">
+                            <h1>View Courses</h1>
+                            <div className = "parent_container" id = "parent_container"></div>
+                            <div className = "vc-enter-btn">
+                                <button id = "create_discussion_button" onClick = {create_discussion_button.bind(this)}>CREATE DISCUSSION</button>
+                            </div>
+                        </div>
                     </div>
                 </body>
             </html>

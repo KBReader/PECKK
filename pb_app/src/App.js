@@ -18,6 +18,13 @@ export default function App() {
             </>
         );
     }
+    else if (localStorage.getItem('current_page') === 'Signup') {
+        return (
+            <>
+                <Signup/>
+            </>
+        );
+    }
     else if (localStorage.getItem('current_page') === 'SearchCourse') {
         return (
             <>

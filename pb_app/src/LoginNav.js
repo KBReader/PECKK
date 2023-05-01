@@ -1,4 +1,4 @@
-import "./pb_public/login_nav_style.css";
+import "./pb_public/navbar_style.css";
 
 export default function LoginNav() {
     async function update_page(page) {
@@ -20,8 +20,8 @@ export default function LoginNav() {
                 <body>
                     <div className="nav-container">
                         <ul>
-                            <li onClick={update_page.bind(this, 'Auth')}>Log In</li>
-                            <li onClick={update_page.bind(this, 'Signup')}>Sign Up</li>
+                            <li><a onClick={update_page.bind(this, 'Auth')}>Log In</a></li>
+                            <li><a onClick={update_page.bind(this, 'Signup')}>Sign Up</a></li>
                         </ul>
                     </div>
                 </body>

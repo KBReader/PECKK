@@ -57,12 +57,12 @@ export default function CreateCourse() {
 
     return (
         <>
-            <NavigationBar/>
             <html lang = "en">
                 <head>
                 </head>
                 <body>
                     <div className = "cc-container">
+                        <NavigationBar/>
                         <div className = "cc-form-box">
                             <h1>Create New Course</h1>
                             <form onSubmit = {handleSubmit(create_button)}>

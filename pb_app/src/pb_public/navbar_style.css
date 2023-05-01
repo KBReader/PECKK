@@ -1,0 +1,27 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: #fff;
+    background-color: #3c00ac;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+li {
+    float: left
+}
+
+li a {
+    display: block;
+    border-radius: 3px;
+    text-align: center;
+    padding: 14px 16px;
+    background-color: #3c00ac;
+}
+
+li a:hover {
+    color: #fff;
+    background-color: #d183ff;
+}
