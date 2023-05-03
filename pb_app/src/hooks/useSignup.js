@@ -10,6 +10,7 @@ export default function useSignup() {
             passwordConfirm: passwordConfirm
         };
         await pb.collection("users").create(record);
+        alert("Successfully Signed Up");
     }
 
     return useMutation(signup);

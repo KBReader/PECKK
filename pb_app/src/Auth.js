@@ -40,7 +40,7 @@ export default function Auth() {
                 <div class="log-form-box">
                     <h1>Log In with Email/Username</h1>
                     {isLoading && <p>Loading...</p>}
-                    {isError && <p style={{color: "red"}}>Invalid Information</p>}
+                    {isError && <p style={{color: "red"}}>Invalid or Missing Information</p>}
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div class="log-input-group">
                             <div class="log-input-field">
