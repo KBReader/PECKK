@@ -27,9 +27,9 @@ export default function Signup() {
             <div class="sign-container">
                 <LoginNav/>
                 <div class="sign-form-box">
-                    <h1>Sign Up</h1>
+                    <h1>Sign Up with CSUF Domain</h1>
                     {isLoading && <p>Loading...</p>}
-                    {isError && <p style={{color: "red"}}>Missing Information</p>}
+                    {isError && <p style={{color: "red"}}>Missing Information or Invalid Domain</p>}
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div class="sign-input-group">
                             <div class="sign-input-field">
