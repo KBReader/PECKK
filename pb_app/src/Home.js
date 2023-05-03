@@ -25,12 +25,8 @@ export default function Home() {
                     <NavigationBar/>
                     <div class="home-form-box">
                         <h1 id="title">Discussion Forum Home Page</h1>
-                        <div class="dropdown">
-                            <button class="dropbtn">Dropdown</button>
-
-                            <div class="dropdown-links">
-                                <a href="Auth.js" onClick={logout}>Logout</a>
-                            </div>
+                        <div class="logout-btn">
+                            <a href="Auth.js" onClick={logout}>Logout</a>
                         </div>
                     </div>
                 </div>
