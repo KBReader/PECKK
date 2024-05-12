@@ -45,3 +45,5 @@ Kelsey Dang: kdangdo2002@csu.fullerton.edu
 Eric Thang: eric.thang315@csu.fullerton.edu
 
 Cristopher Briseno: cbriseno@csu.fullerton.edu
+
+Pascual Gonzales: GonzalesP@csu.fullerton.edu
